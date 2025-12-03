@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/IWMccurdie/JavaScript-Final-Project#readme",
   "dependencies": {
-    "express": "^5.2.0",
+    "express": "^5.2.1",
     "mongoose": "^9.0.0"
   }
 }
