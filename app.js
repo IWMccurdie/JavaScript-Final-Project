@@ -8,7 +8,7 @@ app.use(express.json())
 
 //routes
 // app.use('/api/v1',require('./routes/api/v1/menu'))
-// app.use('/api/v1',require('./routes/api/v1/events'))
+app.use('/api/v1',require('./routes/api/v1/events'))
 app.use('/',require('./routes/pages/menu'))
 
 //server
