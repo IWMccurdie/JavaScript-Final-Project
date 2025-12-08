@@ -1,6 +1,8 @@
 const express=require('express')
 const app=express()
 const port=3000
+const connectDB=require("./config/db")
+connectDB()
 
 //middleware
 app.use(express.static('public'))
