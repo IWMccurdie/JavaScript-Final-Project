@@ -1,5 +1,6 @@
 const router=require('express').Router()
 const menus=require('../../../data/events.json')
+const event = require('../../../models/Event')
 
 //apis
 
@@ -11,6 +12,15 @@ router.get('/event/:eventId', (request, response) => {
     
     response.status(400).json({ error: `Couldn't find event ${eventId}`
     })
+})
+
+
+
+//post route
+router.post('/events',async(req,res)=>{
+    const newitem=await event.create(req.body)
+    res.json(newitem)
+
 })
 
 module.exports = router
