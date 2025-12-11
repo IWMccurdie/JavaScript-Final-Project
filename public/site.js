@@ -1,11 +1,25 @@
-const elemnents={
-    url:document.getElementById('url'),
-    name:document.getElementById('name'),
-    description:document.getElementById('description'),
-    price:document.getElementById('price')
-}
+
 const getMenus=async()=>{
-    const response=await fetch('/api/v1/')
+    const response=await fetch('/api/v1/menu')
     return await response.json()
 }
-console.log(getMenus())
+const menu= getMenus()
+console.log(menu)   
+
+const loadMenus=async()=>{
+    const menus=await getMenus();
+    const container=document.getElementById('container')
+    
+const html=menus.forEach(item => {
+    ` <div class="menu-card">
+    <img src="${item.url}"  alt="Cheeseburger">
+  <h3>${item.name}</h3>
+  <p>${item.description}</p>
+  <span>$${item.price}</span>
+  </div>
+    `
+    container.innerHTML=html
+});
+   
+}
+loadMenus()

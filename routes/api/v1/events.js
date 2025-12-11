@@ -20,7 +20,7 @@ router.get('/event/:eventId', (request, response) => {
 router.post('/events',async(req,res)=>{
     const newitem=await event.create(req.body)
     res.json(newitem)
-
+   
 })
 
 module.exports = router
