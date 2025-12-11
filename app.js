@@ -1,16 +1,23 @@
 const express=require('express')
 const app=express()
 const port=3000
+const connectDB=require("./config/db")
+connectDB()
 
 //middleware
 app.use(express.static('public'))
 app.use(express.json())
 
-//routes
+//routes-backend
 // app.use('/api/v1',require('./routes/api/v1/menu'))
 app.use('/api/v1',require('./routes/api/v1/events'))
+app.use('/api/v1',require('./routes/api/v1/menu'))
 app.use('/',require('./routes/pages/menu'))
 
+//routes-frontend
+app.use('/',require('./routes/pages/menu'))
+app.use('/',require('./routes/pages/events'))
+app.use('/',require('./routes/pages/admin'))
 //server
 const url='http://localhost:3000/'
 const message=`Server is running on port ${port}.Visit ${url}`
