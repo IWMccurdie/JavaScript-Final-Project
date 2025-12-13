@@ -1,5 +1,6 @@
 const mongo=require('mongoose')
 const EventSchema=new mongo.Schema({
+    id: Number, 
     name:{
         type:String,
         required:true
