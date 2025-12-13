@@ -1,5 +1,6 @@
 const mongo=require('mongoose')
 const MenuSchema=new mongo.Schema({
+    id: Number, 
     name:{
         type:String,
         required:true
