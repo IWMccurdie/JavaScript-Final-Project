@@ -15,6 +15,7 @@ router.get('/menu/:id', (request, response) => {
 router.post('/menus',async(req,res)=>{
     const newitem=await menu.create(req.body)
     res.json(newitem)
+
 })
 
-module.exports=router
+module.exports = router
