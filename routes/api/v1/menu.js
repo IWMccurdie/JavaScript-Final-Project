@@ -6,8 +6,8 @@ const menu = require('../../../models/Menu')
 
 router.get('/menu/:id',async (request, response) => {
     const { id } = request.params
-    const found = await menu.findOne({id:id})
-    if (found) return response.send(found)
+    const found = await menu.findOne({id:id});
+    if (found) return response.send(found);
     response.status(400).json({ message: "Item on menu not found" })
 })
 
